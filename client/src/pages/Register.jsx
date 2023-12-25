@@ -19,7 +19,7 @@ const Register = () => {
     });
 
     const registerWithGoogle = () => {
-        window.open('http://localhost:8080/api/v1/users/auth/google', '_self');
+        window.open(`${import.meta.env.VITE_APP_BACKEND_URL}/users/auth/google`, '_self');
         
     }
 
@@ -38,10 +38,6 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (userCreds.email.endsWith('@vcet.edu.in') === false) {
-            toast.warning('Only VCET email ids are allowed');
-            return;
-        }
         if (userCreds.username.length < 3) {
             toast.warning('Username must be at least 3 characters long');
             return;

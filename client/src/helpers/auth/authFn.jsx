@@ -54,14 +54,14 @@ export const register = async (user) => {
 
     try {
 
-        const { username, email, password, phone } = user;
+        const { username, email, password } = user;
 
         const res = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/user/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ username, email, password, phone })
+            body: JSON.stringify({ username, email, password })
 
         });
         const data = await res.json();
