@@ -13,7 +13,7 @@ const Login = () => {
     const token = getLocalStorageWithExpiry('auth')?.token;
 
     const logInWithGoogle = () => {
-        window.open('http://localhost:8080/api/v1/users/auth/google', '_self');
+        window.open(`${import.meta.env.VITE_APP_BACKEND_URL}/users/auth/google`, '_self');
         
     }
 
