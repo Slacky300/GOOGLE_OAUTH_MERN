@@ -29,7 +29,7 @@ export const login = async (user) => {
 
         const { email, password } = user;
 
-        const res = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/user/login`, {
+        const res = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/users/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ export const register = async (user) => {
 
         const { username, email, password } = user;
 
-        const res = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/user/register`, {
+        const res = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/users/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -74,24 +74,3 @@ export const register = async (user) => {
     }
 }
 
-export const getCurrentUserCoins = async (token) => {
-
-    try {
-        const res = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/user/coins`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-
-        });
-        const data = await res.json();
-        if (res.status === 200) {
-            return { status: 200, coins: data.coins };
-        }
-        return { status: 400, message: data.message };
-    } catch
-    (error) {
-        return { status: 500, message: error.message };
-    }
-}
