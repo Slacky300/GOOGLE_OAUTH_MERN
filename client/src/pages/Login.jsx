@@ -27,7 +27,7 @@ const Login = () => {
 
     useEffect(() => {
         if(token){
-            navigate('/student/dashboard');
+            navigate('/');
         }
     },[]);
 

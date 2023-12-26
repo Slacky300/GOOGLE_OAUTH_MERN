@@ -25,7 +25,7 @@ const Register = () => {
 
     useEffect(() => {
         if (token) {
-            navigate('/student/dashboard');
+            navigate('/');
         }
     }, []);
 
@@ -114,7 +114,7 @@ const Register = () => {
                         </p>
                         <p className="my-3 text-center">
                             Already have an account?{' '}
-                            <Link to="/login">Login here</Link>
+                            <Link to="/">Login here</Link>
                         </p>
                     </div>
                 </div>
