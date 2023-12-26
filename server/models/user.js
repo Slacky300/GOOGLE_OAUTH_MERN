@@ -20,7 +20,6 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         trim: true,
-        minlength: 3
     },
     
     profilePicture: {
