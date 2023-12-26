@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         trim: true,
+        
     },
     
     profilePicture: {
@@ -27,6 +28,18 @@ const userSchema = new mongoose.Schema({
         required: false,
         trim: true,
 
+    },
+
+    verificationToken:{
+        type: String,
+        required: false,
+        trim: true,
+    },
+    
+    isVerified: {
+        type: Boolean,
+        required: false,
+        default: false,
     },
 
     googleId: {

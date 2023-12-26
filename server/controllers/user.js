@@ -66,9 +66,7 @@ export const register = async (req, res) => {
 export const verifyemail = async (req, res) => {
     try {
         const tokenId = req.params.tokenId;
-        console.log(tokenId);
         const user = await User.findOne({ verificationToken: tokenId });
-        console.log(user);
 
         if (!user) {
             return res.status(404).json({ error: 'Invalid verification token.' });
@@ -121,7 +119,6 @@ export const getUsers = async (req, res) => {
 export const getUserDetail = async (req,res) => {
     try{
         const existingUser = await User.findOne({email: req.user.email});
-        console.log(existingUser);
         if(!existingUser.googleId) return res.status(403).json({message: "Account associated with this email is not a google account"})
         if(!existingUser) return res.status(404).json({message: "User not found"})
         const token = jwt.sign({ email: existingUser.email, id: existingUser._id, key: existingUser.key }, process.env.JWT_SECRET, { expiresIn: "1h" });
