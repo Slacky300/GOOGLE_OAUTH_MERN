@@ -1,5 +1,5 @@
 import express from 'express';
-import { register, login, verifyemail, getUserDetail } from '../controllers/user.js';
+import { register, login, verifyemail, getUserDetail, getUsers } from '../controllers/user.js';
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
 import validateToken from '../middlewares/isLoggedIn.js';
@@ -12,6 +12,7 @@ userRouter.route('/register').post(register);
 userRouter.route('/verifyemail/:tokenId').get(verifyemail);
 userRouter.route('/login').post(login);
 userRouter.route('/get-user-detail').get(validateToken, getUserDetail)
+userRouter.get('/get-all-users', getUsers)
 
 userRouter.get(
     '/auth/google',
