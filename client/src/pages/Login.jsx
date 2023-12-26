@@ -51,7 +51,7 @@ const Login = () => {
                 token
             })
             toast(message, {type: 'success'});
-            navigate('/student/dashboard');
+            navigate('/home');
             return;
         }
 

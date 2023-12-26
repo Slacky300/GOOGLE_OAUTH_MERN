@@ -52,7 +52,7 @@ const Register = () => {
         const result = await register(userCreds).finally(() => setLoading(false));
         if (result.status === 201) {
             toast.success(result.message);
-            navigate('/login');
+            navigate('/');
         }
         else if (result.status === 400) {
             toast.warning(result.message);
