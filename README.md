@@ -29,7 +29,5 @@ Welcome to **GOOGLE_OAUTH_MERN**, a robust web application built on the MERN sta
 
 Your feedback is crucial for the continuous improvement of this project. Feel free to open issues, provide suggestions, or submit pull requests. Let's make **GOOGLE_OAUTH_MERN** better together!
 
-**Note:** The source code for this project will be made available once the repository reaches 20 stars. Your support is greatly appreciated!
-
 --- 
 
